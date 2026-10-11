@@ -1,0 +1,5 @@
+# Datos persistentes del servidor (mundos, inventarios, logs y backups)
+data/
+*.log
+.env
+.DS_Store
