@@ -29,7 +29,12 @@ services:
       # - dynmap: mapa web en vivo en el navegador (puerto 8123)
       # - essentialsx: comandos utiles (/sethome, /home, /tpa, /spawn)
       # - luckperms: gestor de permisos para que amigos usen /tpa y /home sin darles OP
-      MODRINTH_PROJECTS: "simple-login,skinsrestorer,dynmap,essentialsx,luckperms"
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,dynmap,luckperms"
+
+      # Plugins directos desde GitHub oficial (EssentialsX para Paper 1.21.1)
+      PLUGINS: |
+        https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsX-2.22.0.jar
+        https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsXSpawn-2.22.0.jar
 
       # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
       MEMORY: "3G"
