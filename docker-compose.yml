@@ -4,24 +4,32 @@ services:
     container_name: minecraft-server
     restart: unless-stopped
     ports:
+      # Puerto de juego privado (protegido contra escaneres)
       - "28475:25565"
+      # Puerto web de Dynmap (mapa en tiempo real en el navegador)
+      - "8123:8123"
     environment:
       # Aceptacion de EULA
       EULA: "TRUE"
 
-      # Motor PaperMC 1.21.1
+      # Motor PaperMC 1.21.1 (alto rendimiento)
       TYPE: "PAPER"
       VERSION: "1.21.1"
 
       # Soporte para TLauncher y cuentas no-premium
       ONLINE_MODE: "FALSE"
 
-      # CAPA 1: Lista blanca activa (Nadie entra a menos que este en la lista)
+      # CAPA 1: Lista blanca activa (Nadie entra si no esta en la lista)
       ENABLE_WHITELIST: "TRUE"
       ENFORCE_WHITELIST: "TRUE"
 
-      # CAPA 2: Plugin de Login automatico desde Modrinth (Simple Login)
-      MODRINTH_PROJECTS: "simple-login"
+      # Plugins automaticos desde Modrinth:
+      # - simple-login: contrasenas (/register y /login)
+      # - skinsrestorer: skins reales para TLauncher (/skin)
+      # - dynmap: mapa web en vivo en el navegador (puerto 8123)
+      # - essentialsx: comandos utiles (/sethome, /home, /tpa, /spawn)
+      # - luckperms: gestor de permisos para que amigos usen /tpa y /home sin darles OP
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,dynmap,essentialsx,luckperms"
 
       # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
       MEMORY: "3G"
@@ -36,6 +44,7 @@ services:
       VIEW_DISTANCE: "10"
       SIMULATION_DISTANCE: "6"
       ENABLE_COMMAND_BLOCK: "true"
+      CREATE_CONSOLE_IN_PIPE: "true"
       PVP: "true"
       ALLOW_FLIGHT: "true"
       SPAWN_PROTECTION: "0"
