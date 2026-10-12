@@ -4,19 +4,26 @@ services:
     container_name: minecraft-server
     restart: unless-stopped
     ports:
-      - "25565:25565"
+      - "28475:25565"
     environment:
-      # Aceptación de EULA
+      # Aceptacion de EULA
       EULA: "TRUE"
 
-      # Motor PaperMC (alto rendimiento, optimizado para evitar lag)
+      # Motor PaperMC 1.21.1
       TYPE: "PAPER"
       VERSION: "1.21.1"
 
       # Soporte para TLauncher y cuentas no-premium
       ONLINE_MODE: "FALSE"
 
-      # Asignación de memoria (3 GB para Minecraft en VM de 4 GB RAM)
+      # CAPA 1: Lista blanca activa (Nadie entra a menos que este en la lista)
+      ENABLE_WHITELIST: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+
+      # CAPA 2: Plugin de Login automatico desde Modrinth (Simple Login)
+      MODRINTH_PROJECTS: "simple-login"
+
+      # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
       MEMORY: "3G"
       INIT_MEMORY: "2G"
 
@@ -32,7 +39,7 @@ services:
       PVP: "true"
       ALLOW_FLIGHT: "true"
       SPAWN_PROTECTION: "0"
-      MOTD: "§aServidor de Minecraft §7| §eTLauncher & Premium"
+      MOTD: "§aServidor Privado §7| §eTLauncher & Premium"
 
       # Zona horaria
       TZ: "America/Santiago"
