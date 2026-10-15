@@ -38,8 +38,7 @@ services:
       # - fastleafdecay: caida instantanea de hojas al talar
       # - antitrample: no romper huertos al saltar o caminar
       # - playerheaddrops: suelta la cabeza del jugador al morir
-      # - player-chat-heads: carita del jugador en el chat
-      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops,player-chat-heads"
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops"
 
       # Plugins por descarga directa (compatibilidad garantizada):
       # - EssentialsX & EssentialsXSpawn (GitHub oficial)
