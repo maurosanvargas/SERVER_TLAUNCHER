@@ -25,7 +25,20 @@ services:
       # - simple-login: contrasenas (/register y /login)
       # - skinsrestorer: skins reales para TLauncher (/skin)
       # - luckperms: gestor de permisos para /tpa y /home
-      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms"
+      # Plugins automaticos desde Modrinth:
+      # - simple-login: contrasenas (/register y /login)
+      # - skinsrestorer: skins de Mojang para TLauncher (/skin)
+      # - luckperms: gestor de permisos (/tpa, /home)
+      # - instant-villager-restock: aldeanos sin bloqueo de compras
+      # - easyvtc: ciclar tradeos de aldeanos con Shift+Clic derecho
+      # - thizzyz-tree-feller: talar arboles enteros cortando la base
+      # - harvestmaster: cosechar y replantar cultivos con clic derecho
+      # - gsit: sentarse en escaleras/bloques (/sit, /lay, /crawl)
+      # - invisible-frames: marcos invisibles para cofres
+      # - fastleafdecay: caida instantanea de hojas al talar
+      # - antitrample: no romper huertos al saltar o caminar
+      # - playerheaddrops: suelta la cabeza del jugador al morir
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops"
 
       # Plugins por descarga directa (compatibilidad garantizada):
       # - EssentialsX & EssentialsXSpawn (GitHub oficial)
@@ -34,8 +47,8 @@ services:
         https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsXSpawn-2.22.0.jar
 
       # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
-      MEMORY: "3G"
-      INIT_MEMORY: "2G"
+      MEMORY: "12G"
+      INIT_MEMORY: "6G"
 
       # Flags optimizadas de Aikar para Java Garbage Collection (cero tirones)
       USE_AIKAR_FLAGS: "true"
@@ -44,7 +57,7 @@ services:
       DIFFICULTY: "normal"
       MAX_PLAYERS: "15"
       VIEW_DISTANCE: "10"
-      SIMULATION_DISTANCE: "6"
+      SIMULATION_DISTANCE: "4"
       ENABLE_COMMAND_BLOCK: "true"
       CREATE_CONSOLE_IN_PIPE: "true"
       PVP: "true"
