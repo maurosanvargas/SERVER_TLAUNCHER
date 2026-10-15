@@ -38,13 +38,16 @@ services:
       # - fastleafdecay: caida instantanea de hojas al talar
       # - antitrample: no romper huertos al saltar o caminar
       # - playerheaddrops: suelta la cabeza del jugador al morir
-      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops"
+      # - damage-indicator: numeros flotantes de dano estilo RPG al golpear
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops,damage-indicator"
 
       # Plugins por descarga directa (compatibilidad garantizada):
       # - EssentialsX & EssentialsXSpawn (GitHub oficial)
+      # - TAB de NEZNAMY: interfaz pro, lista TAB, ping en ms y vida en nombres
       PLUGINS: |
         https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsX-2.22.0.jar
         https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsXSpawn-2.22.0.jar
+        https://github.com/NEZNAMY/TAB/releases/download/6.2.0/TAB.v6.2.0.-.Paper.1.20.5.-.1.21.4.jar
 
       # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
       MEMORY: "12G"
