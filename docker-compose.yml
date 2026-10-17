@@ -51,7 +51,7 @@ services:
         https://github.com/NEZNAMY/TAB/releases/download/6.2.0/TAB.v6.2.0.-.Paper.1.20.5.-.1.21.4.jar
         https://github.com/mrgeneralq/sleep-most/releases/download/v5.5.3/sleep-most-5.5.3.jar
 
-      # Asignacion de memoria (3 GB para Minecraft en VM de 4 GB RAM)
+      # Asignacion de memoria (12 GB para Minecraft en VM de 16 GB RAM)
       MEMORY: "12G"
       INIT_MEMORY: "6G"
 
