@@ -81,6 +81,15 @@ chmod +x start.sh stop.sh
 3. Ve a **Multijugador > Agregar Servidor**:
    - **Dirección del servidor:** `TU_IP_EXTERNA:28475`.
 4. ¡Entra a jugar!
+5. **Autenticación (Simple-Login):**
+   - **Primera vez que entras:** Regístrate escribiendo en el chat:
+     ```text
+     /register tu_contraseña tu_contraseña
+     ```
+   - **Próximas conexiones:** Inicia sesión con:
+     ```text
+     /login tu_contraseña
+     ```
 
 ---
 
@@ -91,21 +100,53 @@ chmod +x start.sh stop.sh
 sudo docker compose exec minecraft rcon-cli op TuNombreDeUsuario
 ```
 
-### Configurar permisos de jugadores en LuckPerms (/home, /sethome, /tpa, /spawn):
-```bash
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.sethome true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.sethome.multiple.default true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.home true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpa true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpaccept true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpdeny true
-sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.spawn true
-```
-
 ### Agregar jugadores a la lista blanca (Whitelist):
 ```bash
 sudo docker compose exec minecraft rcon-cli whitelist add NombreDelJugador
 ```
+
+### Configurar permisos de jugadores en LuckPerms:
+Otorga a todos los jugadores acceso a hogares, teletransporte, spawn y cambio de skins con TLauncher:
+```bash
+# Hogares (/sethome y /home)
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.sethome true
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.sethome.multiple.default true
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.home true
+
+# Teletransporte (/tpa, /tpaccept, /tpdeny)
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpa true
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpaccept true
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.tpdeny true
+
+# Volver al punto de aparición (/spawn)
+sudo docker compose exec minecraft rcon-cli lp group default permission set essentials.spawn true
+
+# Cambiarse de skin (/skin <NickMojang>)
+sudo docker compose exec minecraft rcon-cli lp group default permission set skinsrestorer.command.set true
+```
+
+### Configurar Sleep-Most (2 personas para pasar la noche):
+*Ejecutar directamente en el chat dentro del juego siendo OP:*
+```text
+/sm setflag calculation-method players
+/sm setflag players-required 2
+```
+
+### Configurar Ciclado de Aldeanos sin costo ni espera (EasyVTC):
+1. Abre el archivo de configuración en la terminal de la VM:
+   ```bash
+   sudo nano data/plugins/EasyVillagerTradeCycling/config.yml
+   ```
+2. Asegúrate de tener estos valores:
+   ```yaml
+   consume-emerald: false
+   emerald-cost: 0
+   cooldown-seconds: 0
+   ```
+3. Guarda (`Ctrl + O`, `Enter`, `Ctrl + X`) y aplica en caliente:
+   ```bash
+   sudo docker compose exec minecraft rcon-cli easyvtc reload
+   ```
 
 ### Ver los logs de la consola en vivo:
 ```bash
