@@ -23,10 +23,6 @@ services:
 
       # Plugins automaticos desde Modrinth:
       # - simple-login: contrasenas (/register y /login)
-      # - skinsrestorer: skins reales para TLauncher (/skin)
-      # - luckperms: gestor de permisos para /tpa y /home
-      # Plugins automaticos desde Modrinth:
-      # - simple-login: contrasenas (/register y /login)
       # - skinsrestorer: skins de Mojang para TLauncher (/skin)
       # - luckperms: gestor de permisos (/tpa, /home)
       # - instant-villager-restock: aldeanos sin bloqueo de compras
@@ -39,17 +35,27 @@ services:
       # - antitrample: no romper huertos al saltar o caminar
       # - playerheaddrops: suelta la cabeza del jugador al morir
       # - damage-indicator: numeros flotantes de dano estilo RPG al golpear
-      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops,damage-indicator"
+      # - interactivechat: compartir items/inventarios en el chat ([item], [inv])
+      # - placeholderapi: soporte de variables para chat y plugins
+      # - auraskills: habilidades, estadisticas de fuerza/vida y progresion RPG
+      # - levelledmobs: niveles dinamicos, vida escalable y mejor botin en mobs
+      MODRINTH_PROJECTS: "simple-login,skinsrestorer,luckperms,instant-villager-restock,easyvtc,thizzyz-tree-feller,harvestmaster,gsit,invisible-frames,fastleafdecay,antitrample,playerheaddrops,damage-indicator,interactivechat,placeholderapi,auraskills,levelledmobs"
+
+      # Plugins automaticos desde SpigotMC (Spiget API):
+      # - 19286: Minepacks (Mochilas personales /backpack)
+      SPIGOT_RESOURCES: "19286"
 
       # Plugins por descarga directa (compatibilidad garantizada):
       # - EssentialsX & EssentialsXSpawn (GitHub oficial)
       # - TAB de NEZNAMY: interfaz pro, lista TAB, ping en ms y vida en nombres
       # - Sleep-Most: pasar la noche cuando duermen 2 personas fijas (/sm setflag players-required 2)
+      # - ProtocolLib: libreria de paquetes requerida por InteractiveChat en 1.21.1
       PLUGINS: |
         https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsX-2.22.0.jar
         https://github.com/EssentialsX/Essentials/releases/download/2.22.0/EssentialsXSpawn-2.22.0.jar
         https://github.com/NEZNAMY/TAB/releases/download/6.2.0/TAB.v6.2.0.-.Paper.1.20.5.-.1.21.4.jar
         https://github.com/mrgeneralq/sleep-most/releases/download/v5.5.3/sleep-most-5.5.3.jar
+        https://github.com/dmulloy2/ProtocolLib/releases/download/5.4.0/ProtocolLib.jar
 
       # Asignacion de memoria (12 GB para Minecraft en VM de 16 GB RAM)
       MEMORY: "12G"

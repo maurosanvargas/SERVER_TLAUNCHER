@@ -123,6 +123,10 @@ sudo docker compose exec minecraft rcon-cli lp group default permission set esse
 
 # Cambiarse de skin (/skin <NickMojang>)
 sudo docker compose exec minecraft rcon-cli lp group default permission set skinsrestorer.command.set true
+
+# Mochila personal (/backpack - Minepacks con 3 filas por defecto)
+sudo docker compose exec minecraft rcon-cli lp group default permission set backpack.use true
+sudo docker compose exec minecraft rcon-cli lp group default permission set backpack.size.3 true
 ```
 
 ### Configurar Sleep-Most (2 personas para pasar la noche):
@@ -157,3 +161,19 @@ sudo docker compose logs -f
 ```bash
 ./stop.sh
 ```
+
+---
+
+## 🎒 Guía de Uso de los Nuevos Plugins RPG & Social
+
+- **Mochila personal (Minepacks):**
+  - Escribe `/backpack` (o `/bp`) para abrir tu inventario portátil de 3 filas.
+- **Habilidades y Estadísticas RPG (AuraSkills):**
+  - `/skills`: Abre el menú interactivo para ver tus niveles de Minería, Combate, Forja, etc.
+  - `/stats`: Muestra tus atributos mejorados (Vida extra, Fuerza, Maná, Suerte).
+- **Compartir ítems en el Chat (InteractiveChat):**
+  - Escribe `[item]` en el chat para mostrar el objeto que tienes en la mano con estadísticas flotantes.
+  - Escribe `[inv]` para compartir una vista previa de todo tu inventario en el chat.
+- **Monstruos con Niveles (LevelledMobs):**
+  - Los monstruos ahora muestran su nivel sobre su cabeza, escalando vida, daño y soltando mejor botín a mayor nivel o distancia del spawn.
+
