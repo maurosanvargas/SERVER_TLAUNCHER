@@ -127,6 +127,10 @@ sudo docker compose exec minecraft rcon-cli lp group default permission set skin
 # Mochila personal (/backpack - Minepacks con 3 filas por defecto)
 sudo docker compose exec minecraft rcon-cli lp group default permission set backpack.use true
 sudo docker compose exec minecraft rcon-cli lp group default permission set backpack.size.3 true
+
+# Compartir items e inventario en chat (InteractiveChat)
+sudo docker compose exec minecraft rcon-cli lp group default permission set interactivechat.module.item true
+sudo docker compose exec minecraft rcon-cli lp group default permission set interactivechat.module.inventory true
 ```
 
 ### Configurar Sleep-Most (2 personas para pasar la noche):

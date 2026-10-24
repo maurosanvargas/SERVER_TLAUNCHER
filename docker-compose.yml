@@ -43,7 +43,7 @@ services:
 
       # Plugins automaticos desde SpigotMC (Spiget API):
       # - 19286: Minepacks (Mochilas personales /backpack)
-      SPIGOT_RESOURCES: "19286"
+      SPIGET_RESOURCES: "19286"
 
       # Plugins por descarga directa (compatibilidad garantizada):
       # - EssentialsX & EssentialsXSpawn (GitHub oficial)
