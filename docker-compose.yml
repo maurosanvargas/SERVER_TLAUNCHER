@@ -59,9 +59,12 @@ services:
         https://github.com/dmulloy2/ProtocolLib/releases/download/5.4.0/ProtocolLib.jar
         https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
 
-      # Asignacion de memoria (12 GB para Minecraft en VM de 16 GB RAM)
-      MEMORY: "12G"
-      INIT_MEMORY: "6G"
+      # Asignacion de memoria fija (Aikar flags requieren INIT_MEMORY == MEMORY para evitar pausas GC)
+      MEMORY: "10G"
+      INIT_MEMORY: "10G"
+
+      # Desactivar bloqueo sincronico de disco (elimina los picos de 250ms de guardado en GCP)
+      SYNC_CHUNK_WRITES: "false"
 
       # Flags optimizadas de Aikar para Java Garbage Collection (cero tirones)
       USE_AIKAR_FLAGS: "true"
